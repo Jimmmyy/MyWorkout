@@ -5,11 +5,11 @@
 <head>
 
   <meta charset="utf-8"name="description" content="Description en cours">
-  	<title>test</title>
+  <title>test</title>
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
- 
+
 
 
 </head>
@@ -17,242 +17,194 @@
 <body>
 
   <div id="app">
- <!-- <div class="test"></div> -->
-<!-- 
- <figure>
-    <img src="https://img1.goodfon.com/original/1920x1080/8/6f/workout-gym-fitness-pose.jpg"   />
-  </figure> -->
 
-  <!-- <div class="text-block">
-    <h4 class="titre">MyWorkout SHOP</h4></div> -->
-  
-  
+
     <div class="topnav">
- <nav>
- 
-          <ul class="active" v-on:click="currentPage = 'accueil'">HOME</ul>
-          <ul v-on:click="currentPage = 'quisommesnous'">Basket</ul>
-          <ul v-on:click="currentPage = 'liste'"><i class="fa fa-tasks" aria-hidden="true"></i> MyWorkout</ul>
-          <ul v-on:click="currentPage = 'contact'"><i class="fa fa-tasks" aria-hidden="true"></i> Contact</ul>
-          <input type="text" name="username" v-model="username2" placeholder="Enter name">
-        <input type="password" name="passeword"  v-model="passeword2" placeholder="Enter password">
-        <button type="texte" v-on:click="check()" value="login">LOGIN</button>
-          <ul class="sign" v-on:click="currentPage = 'sign'"> SIGN UP</ul>
+     <!--  NavBar + Sign In (On peut se connecter en Admin avec le mot de passe 123-->
+     <nav>
 
-           
-  </nav>
-</div>
- <accueil v-if="currentPage === 'accueil'">
-       
-      <div class="w3-container w3-red">
-  <h1>Welcome to MyWorkout</h1>
-</div>
-
-<img src="https://wallpapercave.com/wp/wp2482989.jpg" alt="Car" style="width:100%">
-
-<div class="w3-container">
-  <p>MyWorkout is an app where you can buy program easily and affordable.</p>
-</div>
-
-<div class="w3-container w3-red">
-  <h5>By Jimmy NGUYEN & Charles COHEN</h5>
-</div>
-
-       
-       
+      <ul class="active" v-on:click="currentPage = 'accueil'">HOME</ul>
+      <ul v-on:click="currentPage = 'quisommesnous'">Basket</ul>
+      <ul v-on:click="currentPage = 'liste'"><i class="fa fa-tasks" aria-hidden="true"></i> MyWorkout</ul>
+      <ul v-on:click="currentPage = 'contact'"><i class="fa fa-tasks" aria-hidden="true"></i> Contact</ul>
+      <input type="text" name="username" v-model="username2" placeholder="Enter name">
+      <input type="password" name="passeword"  v-model="passeword2" placeholder="Enter password">
+      <button type="texte" v-on:click="check()" value="login">LOGIN</button>
+      <ul class="sign" v-on:click="currentPage = 'sign'"> SIGN UP</ul>
 
 
-
-        <!-- <div class="row">
- 
-  </div> -->
-
-       
-       
-</accueil>
-      <section v-else-if="currentPage === 'quisommesnous'" id="quisommesnous">
-        <div class="row1">
-  <div class="col-75">
-    <div class="container">
-      <form >
-
-        <div class="row1">
-          <div class="col-50">
-            <h3>Billing Address</h3>
-            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Mr">
-            <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
-            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
-            <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
-
-            <div class="row1">
-              <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
-              </div>
-              <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-50">
-            <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
-              <i class="fa fa-cc-visa" style="color:navy;"></i>
-              <i class="fa fa-cc-amex" style="color:blue;"></i>
-              <i class="fa fa-cc-mastercard" style="color:red;"></i>
-              <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="M.Batman">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-            <div class="row1">
-              <div class="col-50">
-                <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
-              </div>
-              <div class="col-50">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <input type="submit" v-on:click=pay() value="Continue to checkout" class="btn">
-      </form>
-    </div>
+    </nav>
   </div>
+<!--   Home -->
+  <accueil v-if="currentPage === 'accueil'">
 
-  <div class="col-25">
-    <div class="container">
-      <h4>{{username2}} Cart
-        <span class="price" style="color:black">
-          <i class="fa fa-shopping-cart"></i>
-          <b>4</b>
-        </span>
-      </h4>
-      <table >
-        <td v-for="item in name2"> {{item}} </td>
-    
-        <td v-for="item in price2"> {{item}} </td>
-      </table>
-      <!-- <p><a href="#">Product 1</a> <span class="price"></span></p>
-      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">$2</span></p> -->
+    <div class="w3-container w3-red">
+      <h1>Welcome to MyWorkout</h1>
+    </div>
+
+    <img src="https://wallpapercave.com/wp/wp2482989.jpg" alt="Car" style="width:100%">
+
+    <div class="w3-container">
+      <p>MyWorkout is an app where you can buy program easily and affordable.</p>
+    </div>
+
+    <div class="w3-container w3-red">
+      <h5>By Jimmy NGUYEN & Charles COHEN</h5>
+    </div>
+</accueil>
+<!-- Panier -->
+  <section v-else-if="currentPage === 'quisommesnous'" id="quisommesnous">
+    <div class="row1">
+      <div class="col-75">
+        <div class="container">
+          <form >
+
+            <div class="row1">
+              <div class="col-50">
+                <h3>Billing Address</h3>
+                <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Mr">
+                <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                <input type="text" id="email" name="email" placeholder="john@example.com">
+                <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                <label for="city"><i class="fa fa-institution"></i> City</label>
+                <input type="text" id="city" name="city" placeholder="New York">
+
+                <div class="row1">
+                  <div class="col-50">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="state" placeholder="NY">
+                  </div>
+                  <div class="col-50">
+                    <label for="zip">Zip</label>
+                    <input type="text" id="zip" name="zip" placeholder="10001">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-50">
+                <h3>Payment</h3>
+                <label for="fname">Accepted Cards</label>
+                <div class="icon-container">
+                  <i class="fa fa-cc-visa" style="color:navy;"></i>
+                  <i class="fa fa-cc-amex" style="color:blue;"></i>
+                  <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                  <i class="fa fa-cc-discover" style="color:orange;"></i>
+                </div>
+                <label for="cname">Name on Card</label>
+                <input type="text" id="cname" name="cardname" placeholder="M.Batman">
+                <label for="ccnum">Credit card number</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+                <div class="row1">
+                  <div class="col-50">
+                    <label for="expyear">Exp Year</label>
+                    <input type="text" id="expyear" name="expyear" placeholder="2018">
+                  </div>
+                  <div class="col-50">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="352">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <input type="submit" v-on:click=pay() value="Continue to checkout" class="btn">
+          </form>
+        </div>
+      </div>
+
+      <div class="col-25">
+        <div class="container">
+          <h4>{{username2}} Cart
+            <span class="price" style="color:black">
+              <i class="fa fa-shopping-cart"></i>
+              <b>4</b>
+            </span>
+          </h4>
+          <table >
+            <td v-for="item in name2"> {{item}} </td>
+
+            <td v-for="item in price2"> {{item}} </td>
+          </table>
       <hr>
       <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
     </div>
   </div>
 </div> 
+<!-- Liste programme -->
 </section>
 <section v-else-if="currentPage === 'liste'" id="liste">
-			<h1> MYWORKOUT</h1>
-		<table id="customers" > 
-      <tr>
-        <th> Image </th>
-        <th> Programme </th>
-        <th> Price (€) </th>
-        <th> Number of Exercices </th>
-      </tr>
-      <tr v-for="(item, index) in myList">
-        <td align="center"><img class="imglist" v-bind:src= "item.imagee" /></td>
-        <td>{{item.name}}</td>
-        <td>{{item.price}}</td>
-        <td>{{item.info}}</td>
+ <h1> MYWORKOUT</h1>
+ <table id="customers" > 
+  <tr>
+    <th> Image </th>
+    <th> Programme </th>
+    <th> Price (€) </th>
+    <th> Number of Exercices </th>
+  </tr>
+  <tr v-for="(item, index) in myList">
+    <td align="center"><img class="imglist" v-bind:src= "item.imagee" /></td>
+    <td>{{item.name}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.info}}</td>
 
-       <!--  <td><button v-on:click="deletechose(index)">&times;</button></td> -->
-        <!-- <td><button v-on:click="basket(item)" v-if=>&times;</button></td> -->
-        <td><button v-on:click="basket(item)" >Buy</button></td>
-        <td v-if="Admin"><button v-on:click="deletechose(index)">&times;</button></td>
-      </tr>
-      <tr v-if="Admin">
-      <td><input src="URL" v-model="imagee" placeholder="img.jpg for example"></td>
-            <td><input type="text" v-model="name" placeholder="Add name"></td>
-            <td><input type="number" v-model="price" placeholder="Add price"></td>
-            <td><input type="number" v-model="info" placeholder="Add number of exercices"></td>
-            <td><button v-on:click="sendNewElement()">ADD</button> </td>
+    <!--  <td><button v-on:click="deletechose(index)">&times;</button></td> -->
+    <!-- <td><button v-on:click="basket(item)" v-if=>&times;</button></td> -->
+    <td><button v-on:click="basket(item)" >Buy</button></td>
+    <td v-if="Admin"><button v-on:click="deletechose(index)">&times;</button></td>
   </tr>
   <tr v-if="Admin">
     <td><input src="URL" v-model="imagee" placeholder="img.jpg for example"></td>
-            <td><input type="text" v-model="name" placeholder="Edit name"></td>
-            <td><input type="number" v-model="price" placeholder="Edit price"></td>
-            <td><input type="number" v-model="info" placeholder="Edit number of exercices"></td>
-            <td><input type="number" v-model="index3" placeholder="Case?"></td>
-            <td><button v-on:click="edit(index3)">EDIT</button> </td>
-            
-     </tr>
-
-<!-- <table id="customers">
-          
+    <td><input type="text" v-model="name" placeholder="Add name"></td>
+    <td><input type="number" v-model="price" placeholder="Add price"></td>
+    <td><input type="number" v-model="info" placeholder="Add number of exercices"></td>
+    <td><button v-on:click="sendNewElement()">ADD</button> </td>
+  </tr>
+</table>
 
 
-   </table> -->
+</section>
+<!-- Inscription de l'utilisateur -->
+<section v-else-if="currentPage === 'sign'" id="sign">
+  <div class="container1">
+    <p> Username </p>
+    <input type="text" name="username" v-model="username" placeholder="Enter name">
+    <p> Password </p>
+    <input type="password" name="passeword" v-model="passeword"  placeholder="Enter password">
+    <p> Verify Password </p>
+    <input type="password" name="verypasseword" v-model="verypasseword"  placeholder="Verify password">
 
+    <button type="texte" v-on:click="connectt()" value="signn">SIGN UP</button>
+  </div>
 
-
-
-
-
-
-
-      
-    </table>
-		   
-       
-    </section>
-
-      <section v-else-if="currentPage === 'sign'" id="sign">
-        <div class="container1">
-          <p> Username </p>
-          <input type="text" name="username" v-model="username" placeholder="Enter name">
-          <p> Password </p>
-          <input type="password" name="passeword" v-model="passeword"  placeholder="Enter password">
-          <p> Verify Password </p>
-          <input type="password" name="verypasseword" v-model="verypasseword"  placeholder="Verify password">
-
-          <button type="texte" v-on:click="connectt()" value="signn">SIGN UP</button>
-          <!-- template for the modal component -->
-
-
-          <p v-if="badpsd">{{msg}}</p>
-        </div>
-        
 </section>
 
 
-
+<!-- Nous contacter -->
 <section v-else-if="currentPage === 'contact'" id="contact">
-   <div class="container1">
+ <div class="container1">
 
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" v-model='fname' name="firstname" placeholder="Your name..">
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" v-model='fname' name="firstname" placeholder="Your name..">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" v-model='lname' name="lastname" placeholder="Your last name..">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" v-model='lname' name="lastname" placeholder="Your last name..">
 
-    <label for="country">Sexe</label>
-    <select id="country" name="country">
-      <option value="man">Man</option>
-      <option value="woman">Woman</option>
-      <option value="wtf">Non binaire</option>
-    </select>
+  <label for="country">Sexe</label>
+  <select id="country" name="country">
+    <option value="man">Man</option>
+    <option value="woman">Woman</option>
+    <option value="wtf">Non binaire</option>
+  </select>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+  <label for="subject">Subject</label>
+  <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
-    <button type="text" v-on:click="send()" value="Submit">Send</button>
+  <button type="text" v-on:click="send()" value="Submit">Send</button>
 
 </div> 
 
@@ -263,10 +215,10 @@
 
 
 </section>
-		</div>
-   
+</div>
 
-    
+
+
 </body>
 
 
@@ -275,232 +227,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script type="text/javascript">
-
-  Vue.prototype.$http = axios
-
-
-
-	const app = new Vue({
-  el: '#app',
- data: {
-    index3:'',
-    lname:'',
-    fname:'',
-    currentPage: 'accueil',
-    badpsd: '',
-     username: '',
-     passeword:'',
-     username2: '',
-     passeword2:'',
-     verypasseword:'',
-     msg:'The password is not the same with the verify passeword !',
-    myList: [],
-    name: '',
-    price:'',
-     name2: [],
-    price2:[],
-    nam:'',
-    pric:'',
-    imagee:'',
-    info:'',
-    infobasket:'',
-    pricebasket:'',
-    Admin: false
-  },
-
-  created () {
-    // Ici, l'utilisation d'une fonction flêchée () => {} plutôt que function () {} est primordial !
-    // sans fonction fléchée, this.myList = ... ne fonctionnera pas comme prévu
-    console.log('BONJOUR')
-    this.$http.get('/list')
-      .then( list => {
-        
-        this.myList = list.data
-
-      })
-      .catch(err => {
-        console.log('error', err)
-      })
-},
-
-
-  methods:{
-
-
-sendNewElement () {
-    console.log("AJOUTER")
-      this.$http.post('/list', {
-        name: this.name,
-        imagee: this.imagee,
-        price: this.price,
-        info: this.info
-      })
-      .then(() => {
-        this.myList.push({
-          name: this.name,
-          imagee: this.imagee,
-          price: this.price,
-          info: this.info
-        })
-      })
-    },
-
-
-
-
-  	deletechose(index){
-      console.log("TEST")
-      console.log("INDEX 1 :" + index)
-      this.$http.delete('/list/' + index)
-        .then( () => {
-   
-          console.log(this.myList[index])
-             this.myList.splice(index, 1);
-              console.log(index+ "-->");
-          })
-
-          
-    
-
-
-    
-  
-  	},
-
-    connectt(){
-
-       console.log("DEMARRAGE DE LA FONCTION connect")
-
-      if(this.passeword !== '' && this.verypasseword !== '' && this.username !== ''){
-    if( this.passeword === this.verypasseword){
-      this.$http.post('/connect', {
-        username: this.username,
-        passeword: this.passeword
-      }).then( () => {
-          alert('Thanks you ' + this.username + '!');
-          this.currentPage = 'accueil';
-          })
-    } else {
-      alert('Wrong password !');
-      console.log("Le 2eme mdp n'est pas bon");
-       }
-
-
-    } else {
-        alert('Please fill out the form !');    
-      }
-    },
-
-    check(){
-      // if(this.username2 )*
-      if( this.username2 === 'Admin' && this.passeword2 === '123') {
-        alert("Hi Admin, you have extra power :)");
-        this.Admin = true;
-      } else {
-      if( this.username2 === this.username && this.passeword2 === this.passeword){
-      //          this.$http.post('/connect', {
-      //   username: this.username
-      //   passeword: this.passeword
-      // })
-      //   .then( () => {
-      //     console.log("bonjour");
-      //               console.log("bonjour2");
-                    this.currentPage = 'liste';
-                    alert('Welcome ' + this.username2 + ' !');
-                  
-          
-                
-      
-              // })
-
-        console.log("CONNECTE");
-      } else {
-        alert('Wrong username or password !');
-        console.log("NON CONNECTE");
-      }
-    }
-
-
-
-
-    },
-
-    send(){
-
-
-      if( this.fname !== '' && this.lname !== ''){
-      alert('Thanks you ' + this.fname + ' ' + this.lname + ' !');
-    } else {
-      alert('Please fill out the form !');
-
-    }
-
-
-    
-
-  },
-
-  basket(item){
-    this.$http.post('/basket', {
-        name2: item.name,
-        price2: item.price
-      }).then( () => {
-    console.log(item.name);
-    this.name2.push(
-          item.name
-        );
-    console.log(this.name2);
-    this.price2.push(
-          item.price
-        );
-    console.log(this.price2);
-    alert(this.name2 + " in your basket !");
-    })
-
-  },
-
-  pay(){
-    alert("Thank you for your purchase !");
-    this.currentPage = 'accueil';
-  },
-
- edit(index3){
-  console.log('edit');
-  this.$http.delete('/list/' + index3)
-        .then( () => {
-    
-          console.log(this.myList[index3])
-             this.myList.splice(index3, 1);
-              console.log(index3+ "-->");
-          })
-  this.$http.post('/list', {
-        name: this.name,
-        imagee: this.imagee,
-        price: this.price,
-        info: this.info
-      })
-      .then(() => {
-        this.myList.push({
-          name: this.name,
-          imagee: this.imagee,
-          price: this.price,
-          info: this.info
-        })
-      })
-
-}
-
-}
-  
-
-
-
-})
-	
-
-	
-</script>
+<script type="text/javascript" src="javascripts/script.js"></script>
 
 
 </html>
