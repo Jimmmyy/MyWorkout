@@ -3,7 +3,7 @@ var router = express.Router();
 
 
 
-
+//liste serv
 const list = [{
   name: 'First Program triceps:',
   price: '10',
@@ -19,13 +19,13 @@ const list = [{
   price: '310',
   info: '3',
   imagee: 'https://gif-free.com/uploads/posts/2017-04/1493021447_totoro-fitness.gif'
-  }]
+}]
 
 const name2 = []
 
 const price2 = []
 
-    
+
 
 
 console.log(list)
@@ -35,7 +35,7 @@ router.get('/list', (req, res) => {
   res.json(list)
 })
 
-
+//add element
 router.post('/list', (req, res) => {
   list.push({
     name: req.body.name,
@@ -45,50 +45,35 @@ router.post('/list', (req, res) => {
   })
   res.send('OK')
 })
-
+//del element
 router.delete('/list/:id', (req, res) => {
 	console.log("console launched, ID = " + req.params.data)
   const id = parseInt(req.params.id)
   console.log(id)
 
-// const index = list.findIndex(elem=>elem.id === id)
-// console.log(index)
-// if(index !== -1){
-	// for(let i = 0; i< list.lenth;i++){
-	// 	if(list [i].id === id){
-	// 		console.log(id);
-	// 	index = id;	
-	// 	}
-	// }
+  var index = -1;
+  for(var i in list){
+    console.log(i)
+    if (i === req.params.id) {
+      index = i ;
+      console.log("id =" + i)
+      console.log("index =" + index)
+    }
+  }
+  if(index !== 1){
+    list.splice(index,1)
+    console.log("DELETE")
+    res.send('OK')
+  }
+  
+  else {
+   res.status(404)
+   res.send('error: not found')
+   return
+ }
+})
 
-	var index = -1;
-	for(var i in list){
-		console.log(i)
-		if (i === req.params.id) {
-		  index = i ;
-		  console.log("id =" + i)
-		  console.log("index =" + index)
-		}
-}
-	if(index !== 1){
-		list.splice(index,1)
-		console.log("DELETE")
-		res.send('OK')
-	}
-	
- else {
-	res.status(404)
-	res.send('error: not found')
-	return
-}
-
- // list.splice({
- //    name: req.body.name
- //  })
-
- })
-
-
+//Sign in
 router.post('/connect', (req, res) => {
 	console.log("req.body.username =" + req.body.username)
   const username = req.body.username
@@ -102,19 +87,19 @@ router.post('/connect', (req, res) => {
     res.send('OK')
   }
 })
-
+//Panier
 router.post('/basket', (req, res) => {
   
-    
+  
   
   name2.push(req.body.name2);
-          
-    price2.push(req.body.price2);
-    console.log("Mon prix est :" +req.body.price2)
-    console.log("Mon Nom est :" +req.body.name2)
-          
-        
-    res.send('OK')
+  
+  price2.push(req.body.price2);
+  console.log("Mon prix est :" +req.body.price2)
+  console.log("Mon Nom est :" +req.body.name2)
+  
+  
+  res.send('OK')
 })
 
 
