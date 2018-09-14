@@ -131,7 +131,6 @@
             <td v-for="item in price2"> {{item}} </td>
           </table>
       <hr>
-      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
     </div>
   </div>
 </div> 
@@ -151,9 +150,6 @@
     <td>{{item.name}}</td>
     <td>{{item.price}}</td>
     <td>{{item.info}}</td>
-
-    <!--  <td><button v-on:click="deletechose(index)">&times;</button></td> -->
-    <!-- <td><button v-on:click="basket(item)" v-if=>&times;</button></td> -->
     <td><button v-on:click="basket(item)" >Buy</button></td>
     <td v-if="Admin"><button v-on:click="deletechose(index)">&times;</button></td>
   </tr>
